@@ -4,13 +4,13 @@ setup:
 
 .PHONY: dependencies
 dependencies:
-	flutter pub get
+	fvm flutter pub get
 
 .PHONY: analyze
 analyze:
 	flutter analyze
 
-.PHONY: format 
+.PHONY: format
 format:
 	flutter format lib/
 
@@ -21,11 +21,11 @@ format-analyze:
 
 .PHONY: build-runner
 build-runner:
-	flutter packages pub run build_runner build --delete-conflicting-outputs
+	fvm flutter packages pub run build_runner build --delete-conflicting-outputs
 
 .PHONY: run-dev
 run-dev:
-	flutter run --flavor development --dart-define=FLAVOR=development --target lib/main.dart
+	fvm flutter run --flavor development --dart-define=FLAVOR=development --target lib/main.dart
 
 .PHONY: run-prd
 run-prd:
@@ -88,4 +88,3 @@ distribute-ios-testflight-dev:
 .PHONY: distribute-ios-testflight-prd
 distribute-ios-testflight-prd:
 	cd ios && fastlane ios ios_testflight_production
-
