@@ -13,6 +13,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+
+  # InApp WebView
+  flutter_inappwebview: 6.1.5
+
   # Common
   intl:
   path_provider: 2.1.5
@@ -37,6 +41,7 @@ dependencies:
 
   # Database
   shared_preferences: 2.5.4
+  flutter_secure_storage: 9.2.2
 
   # Firebase
   firebase_core: 4.3.0

@@ -8,7 +8,7 @@ enum Flavor { development, production }
 
 @immutable
 class Constants {
-  const Constants._({required this.endpoint, required this.apiKey});
+  const Constants._({required this.endpoint, required this.apiKey, required this.loginUrl});
 
   factory Constants.of() {
     final flavor = EnumToString.fromString(
@@ -29,6 +29,7 @@ class Constants {
     return const Constants._(
       endpoint: 'https://api.github.com',
       apiKey: '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',
+      loginUrl: 'https://auth.hq-hq.co.jp/login/login',
     );
   }
 
@@ -36,6 +37,7 @@ class Constants {
     return const Constants._(
       endpoint: 'https://api.github.com',
       apiKey: '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',
+      loginUrl: 'https://auth.hq-hq.co.jp/login',
     );
   }
 
@@ -43,6 +45,7 @@ class Constants {
 
   final String endpoint;
   final String apiKey;
+  final String loginUrl;
 
   static final Map<String, String> supportedLanguages = {
     'en': 'English',

@@ -1,7 +1,9 @@
 import 'package:app/data/model/repos.dart';
+import 'package:app/route/auth_guard.dart';
 import 'package:app/ui/detail/detail_page.dart';
 import 'package:app/ui/home/home_page.dart';
 import 'package:app/ui/language/language_page.dart';
+import 'package:app/ui/login/login_page.dart';
 import 'package:app/ui/setting/setting_page.dart';
 import 'package:app/ui/setting/talker_page.dart';
 import 'package:auto_route/auto_route.dart';
@@ -14,17 +16,20 @@ part 'provider.dart';
 
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {
+  AppRouter();
+
   @override
   RouteType get defaultRouteType => const RouteType.material(); //.cupertino, .adaptive ..etc
 
   @override
-  final List<AutoRoute> routes = [
+  List<AutoRoute> get routes => [
     //HomeScreen is generated as HomeRoute because
     //of the replaceInRouteName property
-    AutoRoute(path: '/home', page: HomeRoute.page, initial: true),
+    AutoRoute(path: '/home', page: HomeRoute.page),
     AutoRoute(path: '/detail', page: DetailRoute.page),
     AutoRoute(path: '/setting', page: SettingRoute.page),
     AutoRoute(path: '/language', page: LanguageRoute.page),
     AutoRoute(path: '/talker', page: TalkerRoute.page),
+    AutoRoute(path: '/login', page: LoginRoute.page, initial: true),
   ];
 }

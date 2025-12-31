@@ -12,7 +12,7 @@ targets:
         options:
           build_extensions:
             '^lib/data/model/{{}}.dart': 'lib/data/model/generated/{{}}.freezed.dart'
-            '^lib/data/handler/{{}}.dart': 'lib/data/handler/{{}}.freezed.dart'
+            '^lib/data/handler/{{}}.dart': 'lib/data/handler/generated/{{}}.freezed.dart'
       json_serializable:
         options:
           field_rename: snake
